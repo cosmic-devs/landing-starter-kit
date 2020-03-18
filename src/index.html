@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gulp with TailwindCSS</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+<body class="font-sans bg-gray-200">
+<header class="p-20 text-center bg-blue-900">
+    <h1 class="mb-20 font-medium text-white">Gulp with TailwindCSS Kit</h1>
+    <div class="flex justify-between max-w-md mx-auto py-15">
+        <div>
+            <a class="github-button" href="https://github.com/manjumjn" data-show-count="true"
+               aria-label="Follow @manjumjn on GitHub">Follow @manjumjn</a>
+        </div>
+        <div>
+            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss" data-icon="octicon-star"
+               data-show-count="true" aria-label="Star manjumjn/gulp-with-tailwindcss on GitHub">Star</a>
+        </div>
+        <div>
+            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss/fork"
+               data-icon="octicon-repo-forked" data-show-count="true"
+               aria-label="Fork manjumjn/gulp-with-tailwindcss on GitHub">Fork</a>
+        </div>
+        <div>
+            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss/archive/master.zip"
+               data-icon="octicon-cloud-download" aria-label="Download manjumjn/gulp-with-tailwindcss on GitHub">Download</a>
+        </div>
+    </div>
+</header>
+<div class="max-w-lg py-20 mx-auto">
+    <div class="mb-10">
+        <img class="border border-gray-400 rounded shadow hover:shadow-lg" src="img/cover.jpg"
+             alt="Gulp with TailwindCSS">
+    </div>
+    <div class="instructions">
+        <div class="mb-20 text-gray-600">
+            <h1 class="pb-3 mb-10 text-left text-gray-900 border-b border-gray-400 font-large">Commands</h1>
+            <p class="mb-5">Use the following commands to get started.</p>
+            <code class="block px-4 py-5 font-mono text-sm leading-normal text-gray-700 bg-gray-100 border rounded shadow">
+                // To Install Dev Depedencies<br/>
+                npm install<br/><br/>
+
+                // To start development and server for live preview<br/>
+                npm run dev<br/><br/>
+
+                // To generate minifed,optamized files for live server<br/>
+                npm run build
+            </code>
+        </div>
+
+        <div class="mb-10 text-gray-600">
+            <h1 class="pb-3 mb-10 text-left text-gray-900 border-b border-gray-400 font-large">Options</h1>
+            <p class="mb-5">To change the path of files and destination/build folder or font weights check <b
+                    class="font-bold">package.json</b> file</p>
+            <!-- Ignore the messay code :P only for demo -->
+            <code class="block px-4 py-5 font-mono text-sm leading-normal text-gray-700 bg-gray-100 border rounded shadow">
+                "options": {<br/>
+                &nbsp;&nbsp;"config": {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"tailwindjs": "./tailwind.js"<br/>
+                &nbsp;&nbsp;},<br/>
+                &nbsp;&nbsp;"paths": {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"root": "./",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"src": {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"base": "./src",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"css": "./src/css",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"js": "./src/js",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"img": "./src/img"<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"dist": {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"base": "./dist",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"css": "./dist/css",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"js": "./dist/js",<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"img": "./dist/img"<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"build": {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"base": "./build"<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                &nbsp;&nbsp;}<br/>
+                }
+            </code>
+        </div>
+
+    </div>
+</div>
+
+<div class="p-10 mb-10 text-center text-gray-600">
+    <p class="mb-5">If it's worth sharing feel free to do so :)</p>
+    <a class="p-2 mr-4 text-gray-600 no-underline"
+       href="//www.facebook.com/sharer/sharer.php?u=https://github.com/manjumjn/gulp-with-tailwindcss">Facebook</a>
+    <a class="p-2 text-gray-600 no-underline"
+       href="https://twitter.com/intent/tweet?text=Gulp%20with%20Tailwindcss&amp;url=https://github.com/manjumjn/gulp-with-tailwindcss">Twitter</a>
+</div>
+
+<script src="./js/scripts.js"></script>
+
+<!-- Demo Purpose -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>
