@@ -30,10 +30,8 @@ const replace = require('gulp-replace'); //For Replacing img formats to webp in 
 const del = require('del'); //For Cleaning build/dist for fresh export
 const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P 
 
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  }
+const TailwindExtractor = (content) => {
+  return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
 }
 
 //Load Previews on Browser on dev
