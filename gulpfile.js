@@ -20,7 +20,7 @@ const sass = require('gulp-sass'); //For Compiling SASS files
 const concat = require('gulp-concat'); //For Concatinating js,css files
 const postcss = require('gulp-postcss'); //For Compiling tailwind utilities with tailwind config
 const purify = require('gulp-purifycss');//To remove unused CSS 
-const uglify = require('gulp-uglify');//To Minify JS files
+const terser = require('gulp-terser');//To Minify JS files
 const imagemin = require('gulp-imagemin'); //To Optimize Images
 const purgecss = require('gulp-purgecss'); //To Remove Unsued CSS
 const cleanCSS = require('gulp-clean-css');//To Minify CSS files
@@ -109,7 +109,7 @@ task('dev-scripts' ,()=> {
 task('build-scripts' ,()=> {
     return src([options.paths.src.js + '/libs/**/*.js',options.paths.src.js + '/**/*.js'])
            .pipe(concat({ path: 'scripts.js'}))
-           .pipe(uglify())
+           .pipe(terser())
            .pipe(dest(options.paths.build.js));
 });
 
