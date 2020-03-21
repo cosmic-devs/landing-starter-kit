@@ -55,18 +55,18 @@ function previewReload(done){
 task('dev-html', () => {
     return src(options.paths.src.base+'/**/*.html')
            //Note : Webp still not supported in majpr browsers including forefox
-           .pipe(replace('.jpg', '.webp'))
-           .pipe(replace('.png', '.webp'))
-           .pipe(replace('.jpeg','.webp'))
+           // .pipe(replace('.jpg', '.webp'))
+           // .pipe(replace('.png', '.webp'))
+           // .pipe(replace('.jpeg','.webp'))
            .pipe(dest(options.paths.dist.base));
 }); 
 
 task('build-html', () => {
     return src(options.paths.src.base+'/**/*.html')
            //Note : Webp still not supported in majpr browsers including forefox
-           .pipe(replace('.jpg', '.webp'))
-           .pipe(replace('.png', '.webp'))
-           .pipe(replace('.jpeg','.webp'))
+           // .pipe(replace('.jpg', '.webp'))
+           // .pipe(replace('.png', '.webp'))
+           // .pipe(replace('.jpeg','.webp'))
            .pipe(dest(options.paths.build.base));
 }); 
 
@@ -115,9 +115,10 @@ task('build-scripts' ,()=> {
 
 task('dev-imgs', (done) =>{
     src(options.paths.src.img + '/**/*')
+    .pipe(dest(options.paths.dist.img))
     //Note : Webp still not supported in majpr browsers including forefox
-    .pipe(webp({ quality: 100 }))
-    .pipe(dest(options.paths.dist.img));
+    // .pipe(webp({ options.config.webp.quality }))
+    // .pipe(dest(options.paths.dist.img));
     done();
 });
 
