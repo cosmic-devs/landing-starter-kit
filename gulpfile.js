@@ -124,10 +124,11 @@ task('dev-imgs', (done) =>{
 
 task('build-imgs', (done) =>{
     src(options.paths.src.img + '/**/*')
+    .pipe(imagemin({progressive: true}))
+    .pipe(dest(options.paths.build.img))
     //Note : Webp still not supported in majpr browsers including forefox
-    .pipe(webp({ quality: 100 }))
-    .pipe(imagemin())
-    .pipe(dest(options.paths.build.img));
+    .pipe(webp({ quality: options.config.webp.quality }))
+    .pipe(dest(options.paths.build.img))
     done();
 });
 
