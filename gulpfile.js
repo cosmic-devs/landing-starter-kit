@@ -28,7 +28,8 @@ const cleanCSS = require('gulp-clean-css');//To Minify CSS files
 const webp = require('gulp-webp'); //For converting images to WebP format
 const replace = require('gulp-replace'); //For Replacing img formats to webp in html
 const del = require('del'); //For Cleaning build/dist for fresh export
-const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P 
+const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P
+const tinypng = require('gulp-tinypng-extended');
 
 const TailwindExtractor = (content) => {
   return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
@@ -132,6 +133,17 @@ task('build-imgs', (done) =>{
     done();
 });
 
+task('tinypng', (done) => {
+	src(options.paths.src.img + '/**/*.{png,jpg,jpeg}')
+	.pipe(tinypng({
+		key: options.config.tinypng.key,
+		sigFile: options.paths.src.img + '/.tinypng-sigs',
+        sameDest: true,
+		log: true
+	}))
+	.pipe(dest(options.paths.src.img))
+    done();
+});
 
 //Watch files for changes
 task('watch-changes', (done) => {
