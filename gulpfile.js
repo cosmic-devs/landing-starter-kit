@@ -118,8 +118,8 @@ task('dev-imgs', (done) =>{
     src(options.paths.src.img + '/**/*')
     .pipe(dest(options.paths.dist.img))
     //Note : Webp still not supported in majpr browsers including forefox
-    // .pipe(webp({ options.config.webp.quality }))
-    // .pipe(dest(options.paths.dist.img));
+    .pipe(webp({ quality: options.config.webp.quality }))
+    .pipe(dest(options.paths.dist.img))
     done();
 });
 
