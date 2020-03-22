@@ -7,39 +7,43 @@
     <title>Gulp with TailwindCSS</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
 </head>
 <body class="font-sans bg-gray-200">
-<header class="p-20 text-center bg-blue-900">
-    <h1 class="mb-20 font-medium text-white">Gulp with TailwindCSS Kit</h1>
-    <div class="flex justify-between max-w-md mx-auto py-15">
-        <div>
-            <a class="github-button" href="https://github.com/manjumjn" data-show-count="true"
-               aria-label="Follow @manjumjn on GitHub">Follow @manjumjn</a>
-        </div>
-        <div>
-            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss" data-icon="octicon-star"
-               data-show-count="true" aria-label="Star manjumjn/gulp-with-tailwindcss on GitHub">Star</a>
-        </div>
-        <div>
-            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss/fork"
-               data-icon="octicon-repo-forked" data-show-count="true"
-               aria-label="Fork manjumjn/gulp-with-tailwindcss on GitHub">Fork</a>
-        </div>
-        <div>
-            <a class="github-button" href="https://github.com/manjumjn/gulp-with-tailwindcss/archive/master.zip"
+<header class="relative bg-blue-900">
+    <picture>
+        <source srcset="img/header-767x200.webp" type="image/webp" media="(max-width: 767px)">
+        <source srcset="img/header-767x200.jpg" type="image/jpg" media="(max-width: 767px)">
+        <img class="absolute inset-y-0 object-cover object-center w-full c-header-img"
+             src="img/header-1366x250.jpg"
+             alt="Example header image">
+    </picture>
+    <div class="container relative z-10 flex flex-col justify-center h-full px-5 py-10 text-center text-white">
+        <h1 class="mb-10 text-lg font-bold bg-black rounded-full">Gulp with TailwindCSS Kit</h1>
+        <div class="flex mx-auto py-15">
+            <a class="bg-purple-600 px-2 py-1 mx-3 rounded-lg shadow hover:bg-teal-600 transition-colors duration-500"
+               href="https://github.com/manjumjn/gulp-with-tailwindcss/fork">Fork</a>
+            <a class="bg-purple-600 px-2 py-1 mx-3 rounded-lg shadow hover:bg-teal-600 transition-colors duration-500"
+               href="https://github.com/manjumjn/gulp-with-tailwindcss/archive/master.zip"
                data-icon="octicon-cloud-download" aria-label="Download manjumjn/gulp-with-tailwindcss on GitHub">Download</a>
         </div>
     </div>
 </header>
-<div class="max-w-lg py-20 mx-auto">
-    <div class="mb-10">
-        <img class="border border-gray-400 rounded shadow hover:shadow-lg" src="img/cover.jpg"
-             alt="Gulp with TailwindCSS">
+<section class="container px-5 py-20 mx-auto">
+    <div x-data="{ active: false }" class="mb-10">
+        <picture>
+            <source srcset="img/cover.webp" type="image/webp">
+            <img class="max-w-xs mx-auto transition duration-1000 ease-out transform border border-gray-400 rounded shadow cursor-pointer sm:max-w-md md:max-w-full hover:shadow-lg"
+                 src="img/cover.jpg" alt="Gulp with TailwindCSS"
+                 @click="active = !active"
+                 :class="{ 'hover:scale-y-110 hover:scale-x-75': active, 'hover:scale-y-75 hover:scale-x-110': !active} ">
+        </picture>
     </div>
-    <div class="instructions">
+    <div>
         <div class="mb-20 text-gray-600">
-            <h1 class="pb-3 mb-10 text-left text-gray-900 border-b border-gray-400 font-large">Commands</h1>
+            <h1 class="pb-3 mb-10 text-lg text-left text-gray-900 border-b border-gray-400">Commands</h1>
             <p class="mb-5">Use the following commands to get started.</p>
             <code class="block px-4 py-5 font-mono text-sm leading-normal text-gray-700 bg-gray-100 border rounded shadow">
                 // To Install Dev Depedencies<br/>
@@ -54,10 +58,9 @@
         </div>
 
         <div class="mb-10 text-gray-600">
-            <h1 class="pb-3 mb-10 text-left text-gray-900 border-b border-gray-400 font-large">Options</h1>
+            <h1 class="pb-3 mb-10 text-lg text-left text-gray-900 border-b border-gray-400">Options</h1>
             <p class="mb-5">To change the path of files and destination/build folder or font weights check <b
                     class="font-bold">package.json</b> file</p>
-            <!-- Ignore the messay code :P only for demo -->
             <code class="block px-4 py-5 font-mono text-sm leading-normal text-gray-700 bg-gray-100 border rounded shadow">
                 "options": {<br/>
                 &nbsp;&nbsp;"config": {<br/>
@@ -86,20 +89,9 @@
         </div>
 
     </div>
-</div>
-
-<div class="p-10 mb-10 text-center text-gray-600">
-    <p class="mb-5">If it's worth sharing feel free to do so :)</p>
-    <a class="p-2 mr-4 text-gray-600 no-underline"
-       href="//www.facebook.com/sharer/sharer.php?u=https://github.com/manjumjn/gulp-with-tailwindcss">Facebook</a>
-    <a class="p-2 text-gray-600 no-underline"
-       href="https://twitter.com/intent/tweet?text=Gulp%20with%20Tailwindcss&amp;url=https://github.com/manjumjn/gulp-with-tailwindcss">Twitter</a>
-</div>
+</section>
 
 <script src="js/scripts.js"></script>
-
-<!-- Demo Purpose -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
 </html>

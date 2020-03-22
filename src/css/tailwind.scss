@@ -1,3 +1,19 @@
 @tailwind base;
+
+html {
+  font-size: 16px; // Initial project size
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; // Example Montserrat font loaded
+  min-width: 360px; // Mobile phone Galaxy S5
+  max-width: 1366px; // Given by larger header image width if any
+  @apply mx-auto;
+}
+
+// Example medium screen project size
+@screen md {
+  html {
+    font-size: 20px;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

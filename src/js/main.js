@@ -1,1 +1,5 @@
-//main.js file
+// main.js file
+
+function isMobile() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)
+}

@@ -1,1 +1,24 @@
-//All styles can be added here.
+// All styles can be added here.
+
+// AlpineJS config to hide x-show elements with x-cloak attribute on load
+[x-cloak] {
+  display: none;
+}
+
+// Defined by the height of the mobile header image if any
+header, .c-header-img {
+  height: 200px;
+}
+
+// Defined by the height of the larger header image if any
+@screen md {
+  header, .c-header-img {
+    height: 250px;
+  }
+}
+
+// Example gradient class
+.c-bg-gradient {
+  background: rgb(57, 209, 218);
+  background: linear-gradient(321deg, rgba(18, 89, 178, 1) 0%, rgba(33, 136, 194, 1) 51%, rgba(57, 209, 218, 1) 100%);
+}
