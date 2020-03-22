@@ -41,7 +41,7 @@ task('livepreview', (done) => {
         server: {
             baseDir: options.paths.dist.base
         },
-        port: 1234
+        port: options.config.port
     });
     done();
 });

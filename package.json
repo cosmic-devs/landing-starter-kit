@@ -11,6 +11,7 @@
   "options": {
     "config": {
       "tailwindjs": "./tailwind.config.js",
+      "port": 3000,
       "webp": {
         "quality": 90
       },
