@@ -71,6 +71,26 @@ task('build-html', () => {
            .pipe(dest(options.paths.build.base));
 }); 
 
+task('dev-fonts', () => {
+    return src(options.paths.src.fonts+'/**/*')
+           .pipe(dest(options.paths.dist.fonts));
+}); 
+
+task('build-fonts', () => {
+    return src(options.paths.src.fonts+'/**/*')
+           .pipe(dest(options.paths.build.fonts));
+}); 
+
+task('dev-videos', () => {
+    return src(options.paths.src.videos+'/**/*')
+           .pipe(dest(options.paths.dist.videos));
+}); 
+
+task('build-videos', () => {
+    return src(options.paths.src.videos+'/**/*')
+           .pipe(dest(options.paths.build.videos));
+}); 
+
 //Compiling styles
 task('dev-styles', ()=> {
     var tailwindcss = require('tailwindcss'); 
@@ -154,6 +174,12 @@ task('watch-changes', (done) => {
     //Watching HTML Files edits
     watch(options.paths.src.base+'/**/*.html',series('dev-styles','dev-html',previewReload));
 
+    //Watching fonts Files edits
+    watch(options.paths.src.fonts+'/**/*',series('dev-fonts',previewReload));
+
+    //Watching videos Files edits
+    watch(options.paths.src.videos+'/**/*',series('dev-videos',previewReload));
+
     //Watching css Files edits
     watch(options.paths.src.css+'/**/*',series('dev-styles',previewReload));
 
@@ -181,12 +207,12 @@ task('clean:build', ()=> {
 });
 
 //series of tasks to run on dev command
-task('development', series('clean:dist','dev-html','dev-styles','dev-scripts','dev-imgs',(done)=>{
+task('development', series('clean:dist','dev-html','dev-fonts','dev-videos','dev-styles','dev-scripts','dev-imgs',(done)=>{
     console.log("\n\t" + logSymbols.info,"npm run dev is complete. Files are located at ./dist\n");
     done();
 }));
 
-task('optamizedBuild', series('clean:build','build-html','dev-styles','build-styles','build-scripts','build-imgs',(done)=>{
+task('optamizedBuild', series('clean:build','build-html','build-fonts','build-videos','dev-styles','build-styles','build-scripts','build-imgs',(done)=>{
     console.log("\n\t" + logSymbols.info,"npm run build is complete. Files are located at ./build\n");
     done();
 }));
